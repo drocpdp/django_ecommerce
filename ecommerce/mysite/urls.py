@@ -16,12 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from mysite import homepage
+
 urlpatterns = [
-    path('', include('homepage.urls')),    
-    path('polls/', include('polls.urls')),
+    path('', include('mysite.homepage.urls')),    
     path('admin/', admin.site.urls),
-    path('categories/', include('categories.urls')),
-    path('checkout/', include('checkout.urls')),
-    path('items/', include('items.urls')),
-    path('item_detail/', include('item_detail.urls'))
+    path('categories/', include('mysite.categories.urls')),
+    path('checkout/', include('mysite.checkout.urls')),
+    path('items/', include('mysite.items.urls')),
+    path('item_detail/', include('mysite.item_detail.urls'))
 ]

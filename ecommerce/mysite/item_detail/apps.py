@@ -1,8 +1,6 @@
-# items/apps.py
-
 from django.apps import AppConfig
 
 
-class ItemsConfig(AppConfig):
+class ItemDetailConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'items'
+    name = 'mysite.item_detail'

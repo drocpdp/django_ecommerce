@@ -24,6 +24,7 @@ class ItemForSale(models.Model):
     
     item_name = models.TextField(max_length=100, null=False)
     item_description = models.TextField(max_length=1000, null=False)
+    item_image_url = models.URLField(max_length=1000, null=False)
     item_categories = models.ManyToManyField(Category)
     item_price = models.DecimalField(decimal_places=2,
                                      max_digits=10,
