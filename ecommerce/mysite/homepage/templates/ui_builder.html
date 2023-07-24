@@ -19,7 +19,7 @@
     .product-grid-container {
       max-height: 100%; /* Set the desired height */
       overflow-y: auto; /* Enable vertical scrolling */
-      padding: 50px;
+      padding: 100px;
     }
 
     /* Product card style */
@@ -53,7 +53,27 @@
     <div class="container">
       <!-- Add your header menu content here -->
       <!-- Example: Logo, navigation links, etc. -->
-      Header
+      <h1 class="display-5">E-commerce Site</h1>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Register</a>
+              </li>                                          
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   </nav>
 
@@ -61,16 +81,16 @@
   <div class="container mt-4">
     <div class="row product-grid-container">
         {% for item in items_for_sale %}
-            <!-- Product 1 -->
+            <!-- Product -->
             <div class="col-md-3 product-card">
-            <img src="{{ item.image_url }}" alt="Product 1">
-            <h4>{{ item.name }}</h4>
-            <p class="fw-lighter">{{ item.description}}</p>
-            <p>Category: 
-                {{ item.categories.all|join:', '}}
-            </p>
-            <p>${{ item.price }}</p>
-            <button type="button" class="btn btn-primary">Add to cart</button>
+              <img src="{{ item.image_url }}" alt="Product 1">
+              <h4>{{ item.name }}</h4>
+              <p class="fw-lighter">{{ item.description}}</p>
+              <p>Category: 
+                  {{ item.categories.all|join:', '}}
+              </p>
+              <p>${{ item.price }}</p>
+              <button type="button" class="btn btn-primary">Add to cart</button>
             </div>
         {% endfor %}
 
@@ -84,7 +104,8 @@
   <!-- Footer -->
   <nav class="navbar navbar-expand-lg navbar-light footer">
     <div class="container">
-      <!-- Add your footer content here -->
+      <!-- Add your footer menu content here -->
+      <!-- Example: Logo, navigation links, etc. -->
       Footer
     </div>
   </nav>
