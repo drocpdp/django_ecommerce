@@ -10,6 +10,7 @@ def index(request):
     all_items = ItemForSale.objects.all()
     items_for_sale = [
         {
+            "item_uuid": item.item_uuid,
             "name": item.item_name,
             "description": item.item_description, 
             "image_url": item.item_image_url,
@@ -17,5 +18,4 @@ def index(request):
             "price": "{:,.2f}".format(item.item_price)
         } for item in all_items
     ]
-    print(items_for_sale)
     return render(request, 'ui_builder.html', {'items_for_sale': items_for_sale})

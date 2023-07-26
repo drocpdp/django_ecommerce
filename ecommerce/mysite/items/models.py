@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 
 class Category(models.Model):
 
@@ -22,6 +23,7 @@ class ItemForSale(models.Model):
         verbose_name = "Item for sale"
         verbose_name_plural = "Items for sale"
     
+    item_uuid = models.CharField(max_length=36, unique=True, default=uuid.uuid4)
     item_name = models.TextField(max_length=100, null=False)
     item_description = models.TextField(max_length=1000, null=False)
     item_image_url = models.URLField(max_length=1000, null=False)
