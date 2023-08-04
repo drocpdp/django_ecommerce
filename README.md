@@ -4,7 +4,8 @@ E-Commerce Site built in Django
 
 # To Do:
 
-* IN PROGRESS: Save order per session to session-based context
+* IN PROGRESS: Save order items per session to session-based context
+* IN PROGRESS: Cart page to read items per session from session-based context
 * Orders table/relations (see Customers)
 * Customers table/relations (see Orders)
 * Configure/Install intial DB structure for Users and Admins
