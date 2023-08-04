@@ -17,7 +17,7 @@ class Category(models.Model):
 class ItemForSale(models.Model):
 
     def __str__(self):
-        return self. item_name
+        return self.item_name
     
     class Meta:
         verbose_name = "Item for sale"

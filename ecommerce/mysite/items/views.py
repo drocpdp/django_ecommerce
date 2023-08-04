@@ -16,4 +16,5 @@ def add_item_to_cart(request, item_uuid=-1):
     return HttpResponse("Items added to cart. ID=" + 
                         ", " + str(post_obj.item_name) + 
                         ", " + str(post_obj.item_description) + 
-                        ", " + str(post_obj.item_price))
+                        ", " + str(post_obj.item_price) + 
+                        ", " + str(post_obj.item_uuid))

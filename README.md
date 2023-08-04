@@ -4,12 +4,16 @@ E-Commerce Site built in Django
 
 # To Do:
 
-* Dropdown for Categories, Categories Pages, Should create as Category added in admin.
-* Pagination of items
-* Cart Option, Cart option for user
+* IN PROGRESS: Save order per session to session-based context
+* Orders table/relations (see Customers)
+* Customers table/relations (see Orders)
 * Configure/Install intial DB structure for Users and Admins
 * Install Google/FB signup integration
 * Install Email signup integration
+* Dropdown for Categories, Categories Pages, Should create as Category added in admin.
+* Pagination of items
+* Cart Option, Cart option for user
+
 * Create Page Design and Templates
 
 # Completed
