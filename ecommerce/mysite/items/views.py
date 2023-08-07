@@ -29,7 +29,7 @@ def add_item_to_cart(request, item_uuid=-1):
     
     cart_items = request.session['cart_items']
     
-    return render(request, '../../shoppingcart/templates/shoppingcart.html', {'all_items':cart_items})
+    return render(request, 'shoppingcart.html', {'all_items':cart_items})
 
 
 def clear_cart(request):
