@@ -10,10 +10,9 @@ def item_request(request, item_id=-1):
     return HttpResponse("items view, item <h1>{}</h1>".format(str(item_id)))
 
 def add_item_to_cart(request, item_uuid=-1):
-    print(request)
     post_obj = get_object_or_404(ItemForSale, item_uuid=item_uuid)
-    print(post_obj.item_name, post_obj.item_description, post_obj.item_price)
 
+    # item just added
     cart_item = {
         'item_uuid': post_obj.item_uuid,
         'item_name': post_obj.item_name,
@@ -24,16 +23,14 @@ def add_item_to_cart(request, item_uuid=-1):
     if 'cart_items' not in request.session:
         request.session['cart_items'] = [cart_item]
     else:
-        cart_items = request.session['cart_items']
-        cart_items.append(cart_item)
-        request.session['cart_items'] = cart_items
+        old_items = request.session['cart_items']
+        old_items.append(cart_item)
+        request.session['cart_items'] = old_items #now new items
     
-    print(request.session.items())
-    return HttpResponse("Items added to cart. ID=" + 
-                        ", " + str(post_obj.item_name) + 
-                        ", " + str(post_obj.item_description) + 
-                        ", " + str(post_obj.item_price) + 
-                        ", " + str(post_obj.item_uuid) + '<br><a href="/">Back to Home</a>' + '<br><a href="/items/clear_cart/">Clear Cart</a>')
+    cart_items = request.session['cart_items']
+    
+    return render(request, '../../shoppingcart/templates/shoppingcart.html', {'all_items':cart_items})
+
 
 def clear_cart(request):
     if 'cart_items' in request.session:

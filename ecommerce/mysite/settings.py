@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'mysite.checkout',
     'mysite.items',
     'mysite.item_detail',
+    'mysite.shoppingcart'
 ]
 
 MIDDLEWARE = [

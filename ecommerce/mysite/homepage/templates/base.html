@@ -1,15 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    </head>
-    <body>
-        <div>
-            <h1>In base.html template</h1>
-            <ul>
-                <li>{{ context1 }}</li>
-                <li>{{ context2 }}</li>
-                <li>{{ context3 }}</li>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple eCommerce Template</title>
+  <!-- Link Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles -->
+  <style>
+    /* Add your custom styles here */
+
+    /* Header menu style */
+    .navbar {
+      background-color: #f8f9fa;
+    }
+
+    /* Product grid container style */
+    .product-grid-container {
+      max-height: 100%; /* Set the desired height */
+      overflow-y: auto; /* Enable vertical scrolling */
+      padding: 100px;
+    }
+
+    /* Product card style */
+    .product-card {
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    /* Product image style */
+    .product-card img {
+      max-width: 50%; /* Make the image fit inside the container */
+      max-height: 50%; /* Maintain aspect ratio */
+    }    
+
+    /* Footer style */
+    .footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #f8f9fa;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }    
+  </style>
+</head>
+<body>
+  <!-- Header menu -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <!-- Add your header menu content here -->
+      <!-- Example: Logo, navigation links, etc. -->
+      <h1 class="display-5">E-commerce Site</h1>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Register</a>
+              </li>                                          
             </ul>
+          </div>
         </div>
-    </body>
-</html>
+      </nav>
+    </div>
+  </nav>
+
+

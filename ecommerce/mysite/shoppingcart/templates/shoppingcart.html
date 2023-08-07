@@ -1,0 +1,32 @@
+{% include 'base.html' %}
+
+<div class='row product-grid-container'><h1>SHOPPING CART</h1></div>
+
+{% block content %}
+
+<div class="row product-grid-container">
+    {% for item in all_items %}
+        <!-- Product -->
+        <div class="row" id="{{ item.item_uuid }}">
+                <!--- product name -->
+                <div class="col">
+                    <h4>{{ item.item_name }}</h4>
+                </div>
+                <!--- product description -->
+                <div class="col">
+                    <p class="fw-lighter">{{ item.item_description }}</p>
+                </div>
+                <!--- product price -->
+                <div class="col">
+                    <p>${{ item.item_price }}</p>
+                </div>
+        </div>
+    {% endfor %}
+    <p>
+        <a 
+            class="link-primary"
+            href="{% url 'clear_cart' %}">Clear Cart</a>
+    </p>
+</div>
+{% endblock %}
+{% include 'footer.html' %}
