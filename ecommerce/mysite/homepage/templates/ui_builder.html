@@ -2,11 +2,11 @@
 {% include 'base.html' %}
 {% block content %}
   <!-- Product grid -->
-  <div class="row product-grid-container">
+  <div class="row product-grid-container md-1">
     {% for item in items_for_sale %}
         <!-- Product -->
         <div class="col-md-3 product-card" id="{{ item.item_uuid }}">
-            <form action="{% url 'additem' item.item_uuid %}" method="post">
+            <form action="{% url 'additem' item.item_uuid %}" method="post" class="d-flex flex-column h-100">
                 {% csrf_token %}
                 <!--- product image -->
                 <img src="{{ item.image_url }}" alt="Product 1">
@@ -21,7 +21,9 @@
                 <!--- product price -->
                 <p>${{ item.price }}</p>
                 <!--- submit -->
-                <input type="submit" value="Add to Cart" class="btn btn-primary">
+                <div class="mt-auto">
+                    <input type="submit" value="Add to Cart" class="btn btn-primary position-relative">
+                </div>
             </form>
         </div>
     {% endfor %}
