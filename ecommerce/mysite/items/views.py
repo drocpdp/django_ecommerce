@@ -36,4 +36,4 @@ def clear_cart(request):
     if 'cart_items' in request.session:
         del request.session['cart_items']
     
-    return HttpResponse("Cart has been cleared. <a href='/'>Back to home</a>")
+    return render(request, 'clearedcart.html')

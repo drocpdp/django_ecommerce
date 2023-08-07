@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+{% include 'base.html' %}
+
+<div class='row product-grid-container'><h1>SHOPPING CART</h1></div>
+
+{% block content %}
+
+<div class="row product-grid-container">
+    <p>
+        <h1>Items cleared</h1>
+        <a
+            class="link-primary"
+            href="/">Continue Shopping
+        </a>
+    </p>
+</div>
+{% endblock %}
+{% include 'footer.html' %}
