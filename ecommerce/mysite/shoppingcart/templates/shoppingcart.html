@@ -1,17 +1,42 @@
 {% include 'header.html' %}
 {% include 'base.html' %}
 
-<div class='row product-grid-container'><h1>SHOPPING CART</h1></div>
-
 {% block content %}
 
 <div class="row product-grid-container">
+    <h1>SHOPPING CART</h1>
+    <p>
+        <a 
+            class="link-primary p-2"
+            href="{% url 'clear_cart' %}">Clear Cart
+        </a>
+        <a
+            class="link-primary"
+            href="/">Continue Shopping
+        </a>
+    </p>    
+    <hr/>
+        <!-- Product -->
+        <div class="row p-1 mb-2 bg-primary-subtle text-emphasis-primary" id="{{ item.item_uuid }}">
+            <!--- product name -->
+            <div class="col">
+                <h5>ITEM</h5>
+            </div>
+            <!--- product description -->
+            <div class="col">
+                <h5>DESCRIPTION</h5>
+            </div>
+            <!--- product price -->
+            <div class="col">
+                <h5>PRICE</h5>
+            </div>
+    </div>    
     {% for item in all_items %}
         <!-- Product -->
-        <div class="row" id="{{ item.item_uuid }}">
+        <div class="row p-1 mb-2 bg-secondary-subtle text-emphasis-primary" id="{{ item.item_uuid }}">
                 <!--- product name -->
                 <div class="col">
-                    <h4>{{ item.item_name }}</h4>
+                    <h7>{{ item.item_name }}</h7>
                 </div>
                 <!--- product description -->
                 <div class="col">
